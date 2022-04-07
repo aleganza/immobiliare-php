@@ -1,0 +1,80 @@
+:root{
+    --system: #0D6EFD;
+    --system-hover: #0d67ee;
+}
+/* scrollbar */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+*::-webkit-scrollbar-track {
+    background: #F8F9FA;
+}
+*::-webkit-scrollbar-thumb {
+    background: var(--system);
+}
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--system-hover);
+}
+html, body{
+    height: 100%;
+    overflow: hidden;
+}
+/* negli input number non si vedono le freccette */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.container-full{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.container-sidebar{
+    overflow-y: auto;
+    min-width: 280px;
+}
+.container-right{
+    overflow-y: scroll;
+    width: 100%;
+}
+.home-welcome{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    .home-welcome h1,
+    .home-welcome h2,
+    .home-welcome h3{
+        color: grey;
+    }
+    .home-welcome img{
+        width: 150px;
+    }
+.container-table{
+    margin: auto;
+    width: 98%;
+}
+.nav-link.link-dark{
+    transition: 0s;
+}
+.nav-link.link-dark:hover{
+    background-color: #e9ecef;
+}
+.nav-pills .nav-link.active{
+    background-color: #0f76bb;
+}
+.container-login{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
