@@ -1,4 +1,4 @@
-CREATE TABLE IMMOBILIARE_proprietari(
+CREATE TABLE immobiliare_proprietari(
     CF varchar(16),
     nome varchar(30) not null,
     cognome varchar(30) not null,
@@ -8,21 +8,21 @@ CREATE TABLE IMMOBILIARE_proprietari(
     primary key(CF)
 )
 
-CREATE TABLE IMMOBILIARE_tipoZona(
+CREATE TABLE immobiliare_tipozona(
     Id integer unsigned AUTO_INCREMENT,
     zona varchar(30),
 
     primary key(Id)
 )
 
-CREATE TABLE IMMOBILIARE_tipoImm(
+CREATE TABLE immobiliare_tipoimm(
     Id integer unsigned AUTO_INCREMENT,
     tipo varchar(30),
 
     primary key(Id)
 )
 
-CREATE TABLE IMMOBILIARE_immobili(
+CREATE TABLE immobiliare_immobili(
     Id integer unsigned AUTO_INCREMENT,
     nome varchar(30) not null,
     via varchar(30) not null,
@@ -34,11 +34,11 @@ CREATE TABLE IMMOBILIARE_immobili(
     IdZona integer unsigned,
 
     primary key(Id),
-    foreign key(IdTipo) references IMMOBILIARE_tipoImm(Id),
-    foreign key(IdZona) references IMMOBILIARE_tipoZona(Id)
+    foreign key(IdTipo) references immobiliare_tipoimm(Id),
+    foreign key(IdZona) references immobiliare_tipozona(Id)
 )
 
-CREATE TABLE IMMOBILIARE_intestazioni(
+CREATE TABLE immobiliare_intestazioni(
     Id integer unsigned AUTO_INCREMENT,
     data date not null,
     versamento integer not null,
@@ -46,6 +46,6 @@ CREATE TABLE IMMOBILIARE_intestazioni(
     IdImmob integer unsigned,
 
     primary key(Id),
-    foreign key(IdProp) references IMMOBILIARE_proprietari(CF),
-    foreign key(IdImmob) references IMMOBILIARE_immobili(Id)
+    foreign key(IdProp) references immobiliare_proprietari(CF),
+    foreign key(IdImmob) references immobiliare_immobili(Id)
 )
